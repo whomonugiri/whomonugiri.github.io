@@ -176,21 +176,30 @@ color:#0CA4EE;
 }
 
 @media only screen and (max-width: 600px) {
+  .main{
+    width:100%;
+    display: block;
+    overflow: hidden;
+  }
   .main-frame{
-    width:95%;
+    padding:0px;
+    text-align: center;
+    width:auto;
+    border-radius: 0px;
+    margin:0px;
+    top:0px;
+    padding-bottom: 15px;
+
   }
 
+.input{
+  margin-left:-10px;
+}
   #item{
     width:auto;
   }
 
   .credit{
-    width: 100%;
-    text-align: center;
-    transform:scale(0.85);
-    position: relative;
-    margin:0px;
-    left:0;
-    right:0;
+    display:none;
   }
 }
