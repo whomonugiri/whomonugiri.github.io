@@ -174,3 +174,23 @@ color:#C90CEE;
 .in:hover{
 color:#0CA4EE;
 }
+
+@media only screen and (max-width: 600px) {
+  .main-frame{
+    width:95%;
+  }
+
+  #item{
+    width:auto;
+  }
+
+  .credit{
+    width: 100%;
+    text-align: center;
+    transform:scale(0.85);
+    position: relative;
+    margin:0px;
+    left:0;
+    right:0;
+  }
+}
