@@ -1,0 +1,176 @@
+body{
+  padding:0px;
+  margin:0px;
+  background: repeating-linear-gradient(
+  45deg,
+  #f6ba52,
+  #f6ba52 10px,
+  #ffd180 10px,
+  #ffd180 20px
+);
+
+}
+
+*{
+  transition: all .3s;
+}
+.main{
+  width:100%;
+  display: flex;
+  justify-content: center;
+height: 100vh;
+  background: repeating-linear-gradient(
+  45deg,
+  #f6ba52,
+  #f6ba52 10px,
+  #ffd180 10px,
+  #ffd180 20px
+);
+
+}
+
+.main-frame{
+  margin: 10px 0px;
+border-radius: 10px;
+padding:15px;
+background-color: white;
+}
+.list-item{
+  cursor: pointer;
+  margin: 10px 0px;
+border-radius: 8px;
+padding:3px 5px;
+background-color: white;
+color: #1C2833;
+font-size: 20px;
+font-family: 'Sulphur Point', sans-serif;
+font-weight: bold;
+}
+.list-item:hover{
+text-decoration: line-through;
+  opacity:0.7;
+}
+.list-item:hover .tick{
+  opacity: 1;
+}
+.tick{
+  opacity:0.3;
+}
+.title{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
+}
+input,button{
+  border:0px;
+  outline:none;
+}
+.fas{
+  color:black;
+}
+.input{
+  margin:10px 0px;
+font-family:'Sulphur Point' ;
+}
+#item{
+  border-radius:5px 0px 0px 5px;
+  border-top:1px solid #AAB7B8;
+  border-bottom:1px solid #AAB7B8;
+  border-left:1px solid #AAB7B8;
+  margin:0px;
+  background-color:#EAEDED;
+  width:350px;
+}
+.info-bubble{
+  position: absolute;
+  margin-top:-30px;
+  font-family: calibri;
+  padding:3px 5px;
+  font-size: 15px;
+  color:white;
+  background-color: #1C2833;
+  border-radius: 3px;
+z-index: 2;
+}
+.info-bubble::after{
+  margin-top: 2px;
+    content: "";
+  width:0px;
+  height:0px;
+  display: block;
+  position:absolute;
+z-index: 1;
+  border-top:6px solid #1C2833;
+  border-bottom:6px solid transparent;
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+
+}
+.shadow{
+  box-shadow: 0px -0.2px 6px 0px #566573;
+}
+.button{
+    border-radius:0px 5px 5px 0px;
+    border-top:1px solid #1C2833;
+    border-bottom:1px solid #1C2833;
+    border-right:1px solid #1C2833;
+margin-left:-10px;
+background-color: #1C2833;
+color:white;
+cursor:pointer;
+
+}
+
+.button:hover{
+  opacity:0.8;
+}
+#item,.button{
+
+  padding: 7px;
+  font-size: 1.2em;
+}
+.credit{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  position:fixed;
+  z-index:+9999;
+  bottom:0px;
+  right:0px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  opacity:0.9;
+
+}
+.credit .name-section{
+  font-family: 15px;
+  text-align: right;
+
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+.credit .social-icons{
+  font-size: 25px;
+  text-align: right;
+  margin:1px;
+}
+
+.credit i{
+  cursor: pointer;
+  margin:5px;
+}
+
+.git:hover{
+  color:#34495E;
+}
+
+.insta:hover{
+color:#C90CEE;
+}
+
+.in:hover{
+color:#0CA4EE;
+}
