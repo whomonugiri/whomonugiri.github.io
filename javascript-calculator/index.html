@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Javascript Calculator v1.0</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+      <script src="https://kit.fontawesome.com/286824e84e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+<main class="main">
+<div class="main-frame">
+
+<div class="calc-body">
+<input type="text" class="calc-display" id="display" placeholder="0"></input>
+<div class="calc-buttons">
+
+<button class="spcl-button button" onclick="input(null)">AC</button>
+<button class="spcl-button button" onclick="input('c')">C</button>
+<button class="button" onclick="input('/')">/</button>
+<button class="button" onclick="input('*')">*</button>
+
+<button class="button" onclick="input('1')">1</button>
+<button class="button" onclick="input('2')">2</button>
+<button class="button" onclick="input('3')">3</button>
+<button class="button" onclick="input('+')">+</button>
+
+<button class="button" onclick="input('4')">4</button>
+<button class="button" onclick="input('5')">5</button>
+<button class="button" onclick="input('6')">6</button>
+<button class="button" onclick="input('-')">-</button>
+
+<button class="button" onclick="input('7')">7</button>
+<button class="button" onclick="input('8')">8</button>
+<button class="button" onclick="input('9')">9</button>
+<button class="button v-long" onclick="solve()">=</button>
+
+<button class="button h-long" onclick="input('0')">0</button>
+<button class="button" onclick="input('.')">.</button>
+
+
+
+
+</div>
+</div>
+</div>
+
+<div class="credit">
+<div class="name-section"><span class="name">Developed by Monu Giri</span></div>
+<div class="social-icons">
+<a href="https://github.com/whomonugiri" target="_blank"><i title="@whomonugiri" class="fab fa-github git"></i></a>
+<a href="https://instagram.com/oyeitsmg" target="_blank"><i title="@oyeitsmg" class="fab fa-instagram insta"></i></a>
+<a href="https://www.linkedin.com/in/whomonugiri/" target="_blank"><i title="@whomonugiri" class="fab fa-linkedin-in in"></i></a>
+</div>
+</div>
+  </main>
+  <script src="js/logic.js" type="text/javascript">
+
+  </script>
+  </body>
+</html>
