@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Digital Clock v1.0</title>
+	<link rel="icon" href="icon.png" type="image/png">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Nova+Square|Press+Start+2P&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/286824e84e.js" crossorigin="anonymous"></script>
+	<style>
+	.switch:active{
+box-shadow:0px 0px 0px 0px black;	
+transform: translateY(2px);
+}
+	</style>
+</head>
+<body class="body" id="body">
+<main class="main">
+	<div class="main-frame">
+		<div class="clock-body">
+		<div class="clock-title"><i class="fa fa-clock-o" aria-hidden="true"></i> Clocky <button class="switch"><i class="fa fa-power-off" aria-hidden="true"></i></button></div>
+			<div class="hour inline display">
+			<div id="sc-1">
+				<span class="hour-n t-shadow">02 : 56</span><br>
+				<span class="ampm sub t-shadow">AM</span>
+				<span class="day sub t-shadow">Monday</span>
+			</div>
+			</div>
+			<div class="second inline display ">
+			<div id="sc-2">
+				<span class="second-n t-shadow">56</span>
+				<span class="sub cdate t-shadow"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="credit">
+<div class="name-section"><span class="name">Developed by Monu Giri</span></div>
+<div class="social-icons">
+<a href="https://github.com/whomonugiri" target="_blank"><i title="@whomonugiri" class="fab fa-github git"></i></a>
+<a href="https://instagram.com/oyeitsmg" target="_blank"><i title="@oyeitsmg" class="fab fa-instagram insta"></i></a>
+<a href="https://www.linkedin.com/in/whomonugiri/" target="_blank"><i title="@whomonugiri" class="fab fa-linkedin-in in"></i></a>
+</div>
+</div>
+</main>
+
+
+<script src="js/logic.js"></script>	
+</body>
+</html>

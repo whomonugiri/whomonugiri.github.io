@@ -1,0 +1,157 @@
+body{
+padding:0px;
+	margin:0px;
+/*	background-image: linear-gradient(45deg, #cc8a92 25%, #f5cece 25%, #f5cece 50%, #cc8a92 50%, #cc8a92 75%, #f5cece 75%, #f5cece 100%);*/
+background-size: 28.28px 28.28px;
+}
+
+.main-frame{
+display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.clock-body{
+	font-family: 'Nova Square', cursive;
+	padding:20px;
+	border-radius:7px;
+	background-color: #34495E;
+	background: linear-gradient(45deg,#34495E,#212F3D);
+	border: 1px solid #34495E; 
+box-shadow: inset 0px 0px 1px 1px black,0px 1px 0px 2px #212F3D;
+}
+.inline{
+	display: inline-block;
+}
+
+.clock-title{
+color:white;
+	opacity:0.4;
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 10px;
+	
+}
+
+.switch{
+	width:35px;
+	height: 35px;
+	outline:none;
+	border:1px solid black;
+	font-size:18px;
+	padding:5px;
+	border-radius:50%;
+	cursor: pointer;
+	box-shadow:0px 1px 0px 1px black;
+}
+
+
+
+.display{
+	text-align: center;
+	overflow: hidden;
+	border-radius:5px;
+color:#E74C3C;
+background-color: #A93226;
+/*	border: 1px solid #E74C3C; */
+box-shadow: inset 0px 0px 3px 1px black;
+padding:20px 0px;
+	font-size: 50px;
+	
+}
+
+.sub{
+	
+font-size:20px;	
+}
+.hour{
+width:200px;	
+}
+.t-shadow{
+text-shadow: 0px 1px 1px #7B241C;	
+	
+}
+.second{
+/*	border-top:1px solid red;*/
+width:150px;	
+}
+
+.second-n{
+	
+display: inline-block;
+	animation-name: flip;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+/*
+.cdate{
+border-top:1px solid #E74C3C;	
+}
+*/
+
+
+@keyframes flip{
+	0%{transform:rotateX(0deg);}
+	100%{transform:rotateX(360deg);}
+	
+	
+	
+	
+}
+
+
+.off{
+opacity: 0;
+
+}
+.dim{
+background-color: #7B241C;	
+}
+
+.credit{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  position:fixed;
+  z-index:+9999;
+  bottom:0px;
+  right:0px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  opacity:0.9;
+
+}
+.credit .name-section{
+  font-family: 15px;
+  text-align: right;
+
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+.credit .social-icons{
+  font-size: 25px;
+  text-align: right;
+  margin:1px;
+}
+
+.credit i{
+  cursor: pointer;
+  margin:5px;
+}
+
+.git:hover{
+  color:#34495E;
+}
+
+.insta:hover{
+color:#C90CEE;
+}
+
+.in:hover{
+color:#0CA4EE;
+}
