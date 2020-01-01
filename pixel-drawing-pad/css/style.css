@@ -1,0 +1,102 @@
+body{
+    padding:0px;
+    margin:0px;
+    background-color: black;
+}
+#main{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+div{
+    display: inline-block;
+    padding:10px;
+    background-color: brown;
+    border:1px solid black;
+}
+div:hover{
+    opacity:0.7;
+}
+
+#control{
+    background-color: white;
+    position: absolute;
+    top:0;
+    padding:10px;
+    border-radius: 0px 0px 10px 0px;
+    box-shadow:1px 1px 5px 0px black;
+}
+#control *{
+    cursor: pointer;
+}
+#control *:hover{
+    color:goldenrod;
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+#color{
+    border:0px;
+    height: 25px;
+}
+button{
+    border:0px;
+    background-color: transparent;
+    font-size: 25px;
+    outline:none;
+}
+button:active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.credit{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    position:fixed;
+    z-index:+9999;
+    bottom:0px;
+    right:0px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    opacity:0.9;
+  
+  }
+  .credit .name-section{
+    font-family: 15px;
+    text-align: right;
+  
+  }
+  
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  
+  .credit .social-icons{
+    font-size: 25px;
+    text-align: right;
+    margin:1px;
+  }
+  
+  .credit i{
+    cursor: pointer;
+    margin:5px;
+  }
+  
+  .git:hover{
+    color:#34495E;
+  }
+  
+  .insta:hover{
+  color:#C90CEE;
+  }
+  
+  .in:hover{
+  color:#0CA4EE;
+  }
+  span{
+      font-size: 10px;
+      font-family: calibri;
+  }
