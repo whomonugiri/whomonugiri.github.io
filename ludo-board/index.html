@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ludo Board</title>
+    <title>Ludo Board Game v1.0</title>
     <link rel="stylesheet" href="main.css">
 <!--    <link rel="stylesheet" href="dice.css">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -10,6 +10,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
   />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png"/>
 
 </head>
 <audio id="diceSound">
@@ -33,6 +34,24 @@
   Your browser does not support the audio element.
 </audio>
 <body>
+   <div class="welcome">
+       <div class="setting">
+           <div class="logo">
+               <img src="icon.png" class="logo">
+           </div>
+           <div class="name">
+               <input type="text" class="ri" placeholder="Red player name...">
+               <input type="text" class="gi" placeholder="Green player name...">
+               <input type="text" class="yi" placeholder="Yellow player name...">
+               <input type="text" class="bi" placeholder="Blue player name..."><br>
+               <button class="play">Play</button><br>
+               <span class="note">if only two players playing enter only two names</span>
+           </div>
+           <div class="footer">
+               Made by Monu with ❤ 
+           </div>
+       </div>
+   </div>
     <div class="mainframe">
        <div class="diceboard">
            <div class="info">
@@ -56,7 +75,7 @@
        
        <div class="mdiceboard">
            <div class="info">
-               <span class="playername">
+               <span class="mplayername">
                   Player 1 
                </span>
                <div class="r-dice" onclick="dice(this,0)">
@@ -64,7 +83,7 @@
                </div>
            </div>
            <div class="info">
-                <span class="playername">
+                <span class="mplayername">
                   Player 2 
                </span>
                <div class="g-dice" onclick="dice(this,1)">
@@ -219,7 +238,7 @@
                <div class="b-dice" onclick="dice(this,3)">
                    0
                </div>
-               <span class="playername">
+               <span class="mplayername">
                   Player 4 
                </span>
            </div>
@@ -228,7 +247,7 @@
                <div class="y-dice" onclick="dice(this,2)">
                    0
                </div>
-               <span class="playername">
+               <span class="mplayername">
                   Player 3
                </span>
            </div>

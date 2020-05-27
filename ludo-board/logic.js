@@ -1,8 +1,8 @@
 var step = document.getElementsByClassName('astep');
-var rdice = document.getElementsByClassName('r-dice')[0];
-var gdice = document.getElementsByClassName('g-dice')[0];
-var bdice = document.getElementsByClassName('b-dice')[0];
-var ydice = document.getElementsByClassName('y-dice')[0];
+var rdice = document.getElementsByClassName('r-dice');
+var gdice = document.getElementsByClassName('g-dice');
+var bdice = document.getElementsByClassName('b-dice');
+var ydice = document.getElementsByClassName('y-dice');
 var dicesound= document.getElementById("diceSound"); 
 var killedsound= document.getElementById("killedSound"); 
 var winsound= document.getElementById("winSound"); 
@@ -13,10 +13,79 @@ var g=document.getElementsByClassName('g');
 var b=document.getElementsByClassName('b');
 var y=document.getElementsByClassName('y');
 
+var ri=document.getElementsByClassName('ri')[0];
+var gi=document.getElementsByClassName('gi')[0];
+var yi=document.getElementsByClassName('yi')[0];
+var bi=document.getElementsByClassName('bi')[0];
+
+var play=document.getElementsByClassName('play')[0];
+
 var playerzone= document.getElementsByClassName('player');
 var playerroom= document.getElementsByClassName('playerzone');
-
-
+var playername=document.getElementsByClassName('playername');
+var welcomescreen=document.getElementsByClassName('welcome')[0];
+//alert(playername.length);
+play.addEventListener("click",function(){
+     if(gi.value==""){
+         var i;
+         for(i=0;i<4;i++){
+             g[i].style.display="none";
+         }
+       gdice[0].style.display="none";
+       gdice[1].style.display="none";
+       totalplayer-=1;
+         playername[2].innerHTML="";
+   }else{
+       playername[2].innerHTML=gi.value;
+   }
+    
+    
+   if(ri.value==""){
+       var i;
+         for(i=0;i<4;i++){
+             r[i].style.display="none";
+         }
+       rdice[0].style.display="none";
+       rdice[1].style.display="none";
+       totalplayer-=1;
+       playername[0].innerHTML="";
+   }else{
+       playername[0].innerHTML=ri.value;
+   }
+   
+    
+    
+    
+    if(yi.value==""){
+        var i;
+         for(i=0;i<4;i++){
+             y[i].style.display="none";
+         }
+       ydice[0].style.display="none";
+       ydice[1].style.display="none";
+       totalplayer-=1;
+        playername[3].innerHTML="";
+   }else{
+       playername[3].innerHTML=yi.value;
+   }
+    
+    
+    
+    
+    if(bi.value==""){
+        var i;
+         for(i=0;i<4;i++){
+             b[i].style.display="none";
+         }
+       bdice[0].style.display="none";
+       bdice[1].style.display="none";
+       totalplayer-=1;
+        playername[1].innerHTML="";
+   }else{
+       playername[1].innerHTML=bi.value;
+   }
+    welcomescreen.remove();
+});
 
 //alert(playerzone.length);
 
@@ -56,7 +125,8 @@ function winner(pl){
         if(totalpr==0){
             winsound.play();
             winpos.push(pl);
-            rdice.style.display="none";
+            rdice[0].style.display="none";
+            rdice[1].style.display="none";
             var winno = winpos.indexOf('r')+1;
             playerroom[0].innerHTML="<img src='crown"+winno+".png' class='crown'>";
         }
@@ -65,7 +135,8 @@ function winner(pl){
         if(totalpg==0){
             winsound.play();
             winpos.push(pl);
-            gdice.style.display="none";
+            gdice[0].style.display="none";
+            gdice[1].style.display="none";
             var winno = winpos.indexOf('g')+1;
             playerroom[1].innerHTML="<img src='crown"+winno+".png' class='crown'>";
         }
@@ -74,7 +145,8 @@ function winner(pl){
         if(totalpb==0){
             winsound.play();
             winpos.push(pl);
-            bdice.style.display="none";
+            bdice[0].style.display="none";
+            bdice[1].style.display="none";
             var winno = winpos.indexOf('b')+1;
             playerroom[2].innerHTML="<img src='crown"+winno+".png' class='crown'>";
         }
@@ -83,7 +155,9 @@ function winner(pl){
         if(totalpy==0){
             winsound.play();
             winpos.push(pl);
-            ydice.style.display="none";
+            ydice[0].style.display="none";
+            ydice[1].style.display="none";
+            
             var winno = winpos.indexOf('y')+1;
             playerroom[3].innerHTML="<img src='crown"+winno+".png' class='crown'>";
         }
@@ -306,7 +380,7 @@ function kill(pno,p){
             step[yellowpath[yp[pno]]].innerHTML="";
             rp[i]=-1;
             rstate[i]=0;
-            playerzone[0+i].innerHTML=yellow;
+            playerzone[0+i].innerHTML=red;
             console.log("red"+i+" is dead !");
             return 1427;
         } 
