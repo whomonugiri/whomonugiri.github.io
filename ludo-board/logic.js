@@ -23,6 +23,7 @@ var play=document.getElementsByClassName('play')[0];
 var playerzone= document.getElementsByClassName('player');
 var playerroom= document.getElementsByClassName('playerzone');
 var playername=document.getElementsByClassName('playername');
+var mplayername=document.getElementsByClassName('mplayername');
 var welcomescreen=document.getElementsByClassName('welcome')[0];
 //alert(playername.length);
 play.addEventListener("click",function(){
@@ -35,8 +36,10 @@ play.addEventListener("click",function(){
        gdice[1].style.display="none";
        totalplayer-=1;
          playername[2].innerHTML="";
+         mplayername[1].innerHTML="";
    }else{
        playername[2].innerHTML=gi.value;
+       mplayername[1].innerHTML=gi.value;
    }
     
     
@@ -49,8 +52,10 @@ play.addEventListener("click",function(){
        rdice[1].style.display="none";
        totalplayer-=1;
        playername[0].innerHTML="";
+       mplayername[0].innerHTML="";
    }else{
        playername[0].innerHTML=ri.value;
+       mplayername[0].innerHTML=ri.value;
    }
    
     
@@ -65,8 +70,10 @@ play.addEventListener("click",function(){
        ydice[1].style.display="none";
        totalplayer-=1;
         playername[3].innerHTML="";
+        mplayername[3].innerHTML="";
    }else{
        playername[3].innerHTML=yi.value;
+       mplayername[3].innerHTML=yi.value;
    }
     
     
@@ -81,8 +88,10 @@ play.addEventListener("click",function(){
        bdice[1].style.display="none";
        totalplayer-=1;
         playername[1].innerHTML="";
+        mplayername[2].innerHTML="";
    }else{
        playername[1].innerHTML=bi.value;
+       mplayername[2].innerHTML=bi.value;
    }
     welcomescreen.remove();
 });
