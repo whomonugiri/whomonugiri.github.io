@@ -10,9 +10,7 @@ body{
 background-size: 56.57px 56.57px;
 }
 
-.fixed{
-    position: fixed;
-}
+
 .mainframe{
     display: flex;
     height:100vh;
@@ -219,11 +217,43 @@ border:0.5px solid #9c7605;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow:hidden;
+    position: relative;
 }
 
 .rp{
-/*    position: absolute;*/
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.astep span:nth-child(1){
+    top:0px;
+}
+.astep span:nth-child(2){
+    top:4px;
+}
+.astep span:nth-child(3){
+    top:8px;
+}
+.astep span:nth-child(4){
+    top:12px;
+}
+.astep span:nth-child(5){
+    top:16px;
+}
+.astep span:nth-child(6){
+    top:20px;
+}
+.astep span:only-child{
+    top:auto;
+}
+/*
+.astep::-webkit-scrollbar {
+  width:0px;
+}
+*/
+
+.rp{
+    position: absolute;
     display: inline-block;
     cursor: pointer;
     background-color: white;
@@ -278,6 +308,9 @@ background-size: 15px 10px;
 
 
 @media only screen and (max-width: 600px) {
+    .fixed{
+    position: fixed;
+}
     .mainframe{
     flex-direction: column;
 }

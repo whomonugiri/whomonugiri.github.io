@@ -184,6 +184,79 @@ function winner(pl){
 //   alert("itsworking"); 
 //});
 
+function motionOn(pno){
+    if(pno==0){
+        var i;
+        for(i=0;i<4;i++){
+           
+              r[i].classList.add("animate__animated","animate__tada"); 
+//        r[i].classList.remove("animate__animated","animate__tada");  
+              y[i].classList.remove("animate__animated","animate__tada");  
+              g[i].classList.remove("animate__animated","animate__tada");  
+              b[i].classList.remove("animate__animated","animate__tada");
+            r[i].style.zIndex="+99";
+            g[i].style.zIndex="0";
+            b[i].style.zIndex="0";
+            y[i].style.zIndex="0";
+        }
+            
+        
+    }else if(pno==1){
+        var i;
+        for(i=0;i<4;i++){
+           
+              g[i].classList.add("animate__animated","animate__tada");
+        r[i].classList.remove("animate__animated","animate__tada");  
+              y[i].classList.remove("animate__animated","animate__tada");  
+//              g[i].classList.remove("animate__animated","animate__tada");  
+              b[i].classList.remove("animate__animated","animate__tada");
+            
+             r[i].style.zIndex="0";
+            g[i].style.zIndex="+99";
+            b[i].style.zIndex="0";
+            y[i].style.zIndex="0";
+        }
+        
+    }else if(pno==2){
+        var i;
+        for(i=0;i<4;i++){
+           
+              y[i].classList.add("animate__animated","animate__tada");
+        r[i].classList.remove("animate__animated","animate__tada");  
+//              y[i].classList.remove("animate__animated","animate__tada");  
+              g[i].classList.remove("animate__animated","animate__tada");  
+              b[i].classList.remove("animate__animated","animate__tada");
+            
+             r[i].style.zIndex="0";
+            g[i].style.zIndex="0";
+            b[i].style.zIndex="0";
+            y[i].style.zIndex="+99";
+        }
+    }else if(pno==3){
+        var i;
+        for(i=0;i<4;i++){
+           
+              b[i].classList.add("animate__animated","animate__tada");
+            r[i].classList.remove("animate__animated","animate__tada");  
+              y[i].classList.remove("animate__animated","animate__tada");  
+              g[i].classList.remove("animate__animated","animate__tada");  
+//              b[i].classList.remove("animate__animated","animate__tada");
+             r[i].style.zIndex="0";
+            g[i].style.zIndex="0";
+            b[i].style.zIndex="+99";
+            y[i].style.zIndex="0";
+    }
+    }else{
+       for(i=0;i<4;i++){
+           
+              r[i].classList.remove("animate__animated","animate__tada");  
+              y[i].classList.remove("animate__animated","animate__tada");  
+              g[i].classList.remove("animate__animated","animate__tada");  
+              b[i].classList.remove("animate__animated","animate__tada");  
+            
+        } 
+    }
+}
 var apl=[0,0,0,0];
 
 function dice(obj,pno){
@@ -192,7 +265,8 @@ function dice(obj,pno){
     obj.innerHTML=num;
 //    if(num==6){
        moves[pno]=num;
-
+motionOn(pno);
+    
 //if(pno==0){
 //  if(!rstate.includes(1)){
 //        
@@ -226,6 +300,7 @@ function dice(obj,pno){
 
 
 function kill(pno,p){
+    
     if(p==0){
         
         if(safeplace.includes(redpath[rp[pno]])){
@@ -233,9 +308,11 @@ function kill(pno,p){
         }
         var i;
         for(i=0;i<4;i++){
-           var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b">stars</span>'; 
+           var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b" style="z-index: 0;">stars</span>'; 
            var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g">stars</span>'; 
            var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y">stars</span>'; 
+            
+            
             
             var check = step[redpath[rp[pno]]].innerHTML;
     console.log(check);
@@ -277,9 +354,9 @@ function kill(pno,p){
         }
         var i;
         for(i=0;i<4;i++){
-           var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b">stars</span>'; 
-           var red = '<span onclick="movered(this,'+i+')" class="rp material-icons r">stars</span>'; 
-           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y">stars</span>'; 
+           var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b" style="z-index: 0;">stars</span>'; 
+           var red = '<span onclick="movered(this,'+i+')" class="rp material-icons r" style="z-index: 0;">stars</span>'; 
+           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y" style="z-index: 0;">stars</span>'; 
             
             var check = step[greenpath[gp[pno]]].innerHTML;
     console.log(check);
@@ -321,9 +398,9 @@ function kill(pno,p){
         }
         var i;
         for(i=0;i<4;i++){
-           var red = '<span onclick="movered(this,'+i+')" class="rp material-icons r">stars</span>'; 
-           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g">stars</span>'; 
-           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y">stars</span>'; 
+           var red = '<span onclick="movered(this,'+i+')" class="rp material-icons r" style="z-index: 0;">stars</span>'; 
+           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g" style="z-index: 0;">stars</span>'; 
+           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y" style="z-index: 0;">stars</span>'; 
             
             var check = step[bluepath[bp[pno]]].innerHTML;
     console.log(check);
@@ -362,9 +439,9 @@ function kill(pno,p){
         }
         var i;
         for(i=0;i<4;i++){
-           var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b">stars</span>'; 
-           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g">stars</span>'; 
-           var red = '<span onclick="movered(this,'+i+')" class="rp material-icons r">stars</span>'; 
+           var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b" style="z-index: 0;">stars</span>'; 
+           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g" style="z-index: 0;">stars</span>'; 
+           var red = '<span onclick="movered(this,'+i+')" class="rp material-icons r" style="z-index: 0;">stars</span>'; 
             
             var check = step[yellowpath[yp[pno]]].innerHTML;
     console.log(check);
@@ -422,7 +499,9 @@ function movered(obj,pno){
             return 0;
             
         }
+        motionOn(5);
          kill(pno,0);
+        
     moves[0]=0;
     if(rp[pno]>-1){
        var prevpl = step[redpath[rp[pno]]].innerHTML; 
@@ -470,7 +549,9 @@ function movegreen(obj,pno){
             obj.remove();
             return 0;
         }
+         motionOn(5);
         kill(pno,1);
+       
     moves[1]=0;
     if(gp[pno]>-1){
        var prevpl = step[greenpath[gp[pno]]].innerHTML; 
@@ -520,7 +601,9 @@ function moveblue(obj,pno){
             obj.remove();
             return 0;
         }
+        motionOn(5);
         kill(pno,2);
+        
     moves[3]=0;
     if(bp[pno]>-1){
        var prevpl = step[bluepath[bp[pno]]].innerHTML; 
@@ -570,8 +653,9 @@ inoutsound.play();
             obj.remove();
             return 0;
         }
-        
+        motionOn(5);
         kill(pno,3);
+        
     moves[2]=0;
     if(yp[pno]>-1){
        var prevpl = step[yellowpath[yp[pno]]].innerHTML; 
