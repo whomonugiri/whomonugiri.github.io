@@ -115,6 +115,7 @@ input::placeholder{
 }
 
 .diceboard{
+    margin:5px;
     display: flex;
     flex-direction: column;
     height:600px;

@@ -3,6 +3,8 @@ var rdice = document.getElementsByClassName('r-dice');
 var gdice = document.getElementsByClassName('g-dice');
 var bdice = document.getElementsByClassName('b-dice');
 var ydice = document.getElementsByClassName('y-dice');
+
+
 var dicesound= document.getElementById("diceSound"); 
 var killedsound= document.getElementById("killedSound"); 
 var winsound= document.getElementById("winSound"); 
@@ -25,6 +27,7 @@ var playerroom= document.getElementsByClassName('playerzone');
 var playername=document.getElementsByClassName('playername');
 var mplayername=document.getElementsByClassName('mplayername');
 var welcomescreen=document.getElementsByClassName('welcome')[0];
+var pp=[];
 //alert(playername.length);
 play.addEventListener("click",function(){
      if(gi.value==""){
@@ -40,6 +43,7 @@ play.addEventListener("click",function(){
    }else{
        playername[2].innerHTML=gi.value;
        mplayername[1].innerHTML=gi.value;
+       pp.push('g');
    }
     
     
@@ -56,6 +60,7 @@ play.addEventListener("click",function(){
    }else{
        playername[0].innerHTML=ri.value;
        mplayername[0].innerHTML=ri.value;
+       pp.push('r');
    }
    
     
@@ -74,6 +79,7 @@ play.addEventListener("click",function(){
    }else{
        playername[3].innerHTML=yi.value;
        mplayername[3].innerHTML=yi.value;
+       pp.push('y');
    }
     
     
@@ -92,8 +98,31 @@ play.addEventListener("click",function(){
    }else{
        playername[1].innerHTML=bi.value;
        mplayername[2].innerHTML=bi.value;
+      pp.push('b');
    }
-    welcomescreen.remove();
+    if(pp[0]=='r'){
+    rdice[0].style.display="";
+    rdice[1].style.display="";
+}
+if(pp[0]=='g'){
+    gdice[0].style.display="";
+    gdice[1].style.display="";
+}
+if(pp[0]=='y'){
+    ydice[0].style.display="";
+    ydice[1].style.display="";
+}
+if(pp[0]=='b'){
+    bdice[0].style.display="";
+    bdice[1].style.display="";
+}
+    if(pp.length<2){
+        alert('Please Enter Atleast 2 Players !');
+        return 0;
+    }else{
+    welcomescreen.remove();    
+    }
+    
 });
 
 //alert(playerzone.length);
@@ -257,7 +286,27 @@ function motionOn(pno){
         } 
     }
 }
-var apl=[0,0,0,0];
+//var extrachances=[0,0,0,0];
+//function activeDice(player){
+//    if(player=='r'){
+//        var stay=0;
+//       if(moves[0]==6){
+//           stay=1;
+//       }else if()
+//        var currentd=pp.indexOf('r');
+//        var totalad=pp.length;
+//        if(stay==0){
+//            rdice[0].style.display="none";
+//            rdice[1].style.display="none";
+//            if(currentd==(totalad-1)){
+//                activeDice(pp[0]);
+//            }else{
+//               activeDice(currentd+1); 
+//            }
+//            
+//        }
+//    }
+//}
 
 function dice(obj,pno){
     dicesound.play();
