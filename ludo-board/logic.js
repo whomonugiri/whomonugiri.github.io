@@ -358,8 +358,9 @@ function kill(pno,p){
         var i;
         for(i=0;i<4;i++){
            var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b" style="z-index: 0;">stars</span>'; 
-           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g">stars</span>'; 
-           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y">stars</span>'; 
+           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g" style="z-index: 0;">stars</span>'; 
+           
+           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y" style="z-index: 0;">stars</span>'; 
             
             
             
