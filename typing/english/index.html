@@ -13,6 +13,10 @@
     html {
         scroll-behavior: smooth;
     }
+
+    .result input {
+        min-width: 150px;
+    }
 </style>
 
 <body>
@@ -21,26 +25,26 @@
 
 
     <div class="container option">
-        <div class="card mt-5 col-6 m-auto shadow">
+        <div class="card mt-5 col-lg-6 col-md-12 m-auto shadow">
             <div class="card-header bg-danger text-light text-center">
                 English Typing Test
             </div>
             <div class="card-body">
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Enter Your Name</label>
                     </div>
-                    <div class="col-8 p-1">
+                    <div class="col-lg-8 col-sm-12 p-1">
                         <input type="text" id="username" class="form-control">
                     </div>
                 </div>
 
 
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Select Test Time</label>
                     </div>
-                    <div class="col-8 p-1">
+                    <div class="col-lg-8 col-sm-12 p-1">
                         <select class="form-select" id="duration">
                             <option value="60">1 Minute</option>
                             <option value="120">2 Minute</option>
@@ -53,17 +57,17 @@
 
 
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Select Paragraph</label>
                     </div>
-                    <div class="col-8 p-1">
+                    <div class="col-lg-8 col-sm-12 p-1">
                         <select class="form-select" id="para">
                             <option value="1">Random Words</option>
-                            <option value="2" style="">Brothers</option>
+                            <option value="2">Brothers</option>
 
-                            <option value="3" style="">The Awakening</option>
-                            <option value="4" style="">Christmas Carol</option>
-                            <option value="5" style="">Fairy Tales</option>
+                            <option value="3">The Awakening</option>
+                            <option value="4">Christmas Carol</option>
+                            <option value="5">Fairy Tales</option>
 
 
                         </select>
@@ -73,10 +77,10 @@
 
 
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Set Word Limit</label>
                     </div>
-                    <div class="col-8 p-1 d-flex">
+                    <div class="col-lg-8 col-sm-12 p-1 d-flex">
                         <div class="p-2">
                             <input class="form-check-input" type="checkbox" value="" id="limiton">
                             <label class="form-check-label">
@@ -97,10 +101,10 @@
                     </div>
                 </div>
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Backspace</label>
                     </div>
-                    <div class="col-8 p-1 d-flex">
+                    <div class="col-lg-8 col-sm-12 p-1 d-flex">
                         <div class="p-2">
                             <input class="form-check-input" type="checkbox" value="" id="backon" checked>
                             <label class="form-check-label">
@@ -121,10 +125,10 @@
                     </div>
                 </div>
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Highlight & Auto Scroll</label>
                     </div>
-                    <div class="col-8 p-1 d-flex">
+                    <div class="col-lg-8 col-sm-12 p-1 d-flex">
                         <div class="p-2">
                             <input class="form-check-input" type="checkbox" id="scrollon" value="" checked>
                             <label class="form-check-label">
@@ -151,7 +155,7 @@
         </div>
     </div>
     <div class="container tester" style="display:none">
-        <div class="card mt-1 col-9 m-auto shadow">
+        <div class="card mt-1 col-lg-9 col-sm-12 m-auto shadow">
             <div class="card-header bg-danger text-light text-center d-flex justify-content-evenly">
                 <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
                 <button class="btn btn-danger">NWPM <span class="nwpm">0.00</span></button>
@@ -160,14 +164,14 @@
             </div>
             <div class="card-body">
                 <div class="border p-2 overflow-auto bg-light" id="textbook" style="height:250px;font-size:20px;"></div>
-                <div class="bg-danger">
-                    <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
+                <div class="bg-danger p-2">
+                    <!-- <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
                     <button class="btn btn-danger">NWPM <span class="nwpm">0.00</span></button>
                     <button class="btn btn-danger">ACCU <span class="acc">0</span>%</button>
-                    <button class="btn btn-danger">TIME <span class="time">00:00</span></button>
+                    <button class="btn btn-danger">TIME <span class="time">00:00</span></button> -->
 
                     <button class="btn btn-sm btn-primary isize">+</button>
-                    <span id="fsize">20</span>
+                    <span id="fsize" class="text-white">20</span>
                     <button class="btn btn-sm btn-primary dsize">-</button>
 
                 </div>
@@ -185,11 +189,11 @@
         </div>
     </div>
     <div class="container result" style="display:none">
-        <div class="card mt-3 col-9 m-auto shadow">
+        <div class="card mt-3 col-lg-9 col-sm-12 m-auto shadow">
             <div class="card-header text-dark text-center" style="font-size:xx-large;">
                 <b>TYPING TEST RESULT</b>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class='table'>
                     <tr class="" style="font-size: large;">
                         <td><span class="p-2">Name </span></td>
