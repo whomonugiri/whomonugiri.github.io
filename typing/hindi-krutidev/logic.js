@@ -227,6 +227,26 @@ $('#start').click(function (e) {
             if (statusTxt == "success") {
                 var textbook = $('#textbook').text().trim();
                 textbook_words = textbook.split(" ");
+
+                if (wordlimit) {
+                    var lim = $("#limit").val();
+                    var temp = [];
+
+                    if (lim < textbook_words.length) {
+                        for (i = 0; i < lim; i++) {
+                            temp.push(textbook_words[i]);
+                        }
+                        textbook_words = temp;
+                        var st = "";
+                        for (i = 0; i < textbook_words.length; i++) {
+                            st += textbook_words[i] + ' ';
+                        }
+                        $('#textbook').text(st);
+                        textbook = $('#textbook').text().trim();
+                    }
+
+
+                }
                 console.log(textbook.length);
                 result.totalkey = textbook.length;
             }
@@ -253,7 +273,7 @@ function scrolldiv() {
     var elem = document.getElementById("restbook");
     if (elem) {
         elem.scrollIntoView({
-            block: 'end',
+            block: 'center',
             behavior: 'smooth',
             inline: 'nearest'
         });

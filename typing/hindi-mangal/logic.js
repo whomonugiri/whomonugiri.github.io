@@ -77,7 +77,7 @@ var result = {
     accuracy: '0 %',
     timeduration: '',
     nwpm: '0 WPM',
-    testname: 'ENGLISH',
+    testname: 'HINDI MANGAL',
     gwpm: '0 WPM',
     wrongwords: 0,
     totalkey: '',
@@ -206,8 +206,26 @@ $('#subtest').click(function () {
     showResult();
 
 });
+var non = "";
+$("#textcopy").keydown(function (e) {
+    if (e.which == 8 && disablebackspace) { e.preventDefault(); return false; } else {
+        if (e.keyCode == 8) {
 
-$(document).keydown(function (e) { if (e.which == 8 && disablebackspace) { e.preventDefault(); return false; } });
+
+        } else {
+            userkeys.forEach(function (k) {
+                if (k.keycode == e.keyCode && k.shift == e.shiftKey) {
+                    non = $('#textcopy').val() + k.key;
+                    $('#textcopy').val(non);
+                }
+            });
+            e.preventDefault();
+
+        }
+
+        typing(e);
+    }
+});
 
 $('#start').click(function (e) {
     if ($('#username').val() == '') {
@@ -223,12 +241,10 @@ $('#start').click(function (e) {
         $('.tester').show(1000);
         var para = $('#para').val();
         console.log('paragraph', para);
-
         $('#textbook').load('text' + para + '.txt', function (responseTxt, statusTxt, xhr) {
             if (statusTxt == "success") {
                 var textbook = $('#textbook').text().trim();
                 textbook_words = textbook.split(" ");
-
                 if (wordlimit) {
                     var lim = $("#limit").val();
                     var temp = [];
@@ -248,7 +264,7 @@ $('#start').click(function (e) {
 
 
                 }
-                console.log(textbook_words);
+                console.log(textbook.length);
                 result.totalkey = textbook.length;
             }
         });
@@ -267,8 +283,6 @@ $('#start').click(function (e) {
 
 
 
-
-
     }
 
 });
@@ -283,7 +297,501 @@ function scrolldiv() {
     }
 
 }
-$('#textcopy').keyup(function (e) {
+var userkeys = [
+    {
+        "keycode": 32,
+        "key": " ",
+        "shift": false
+    },
+    {
+        "keycode": 8,
+        "key": "Backspace",
+        "shift": false
+    },
+    {
+        "keycode": 192,
+        "key": "ॊ",
+        "shift": false
+    },
+    {
+        "keycode": 49,
+        "key": "1",
+        "shift": false
+    },
+    {
+        "keycode": 50,
+        "key": "2",
+        "shift": false
+    },
+    {
+        "keycode": 51,
+        "key": "3",
+        "shift": false
+    },
+    {
+        "keycode": 52,
+        "key": "4",
+        "shift": false
+    },
+    {
+        "keycode": 53,
+        "key": "5",
+        "shift": false
+    },
+    {
+        "keycode": 54,
+        "key": "6",
+        "shift": false
+    },
+    {
+        "keycode": 55,
+        "key": "7",
+        "shift": false
+    },
+    {
+        "keycode": 56,
+        "key": "8",
+        "shift": false
+    },
+    {
+        "keycode": 57,
+        "key": "9",
+        "shift": false
+    },
+    {
+        "keycode": 48,
+        "key": "0",
+        "shift": false
+    },
+    {
+        "keycode": 189,
+        "key": "-",
+        "shift": false
+    },
+    {
+        "keycode": 187,
+        "key": "ृ",
+        "shift": false
+    },
+    {
+        "keycode": 81,
+        "key": "ौ",
+        "shift": false
+    },
+    {
+        "keycode": 87,
+        "key": "ै",
+        "shift": false
+    },
+    {
+        "keycode": 69,
+        "key": "ा",
+        "shift": false
+    },
+    {
+        "keycode": 82,
+        "key": "ी",
+        "shift": false
+    },
+    {
+        "keycode": 84,
+        "key": "ू",
+        "shift": false
+    },
+    {
+        "keycode": 89,
+        "key": "ब",
+        "shift": false
+    },
+    {
+        "keycode": 85,
+        "key": "ह",
+        "shift": false
+    },
+    {
+        "keycode": 73,
+        "key": "ग",
+        "shift": false
+    },
+    {
+        "keycode": 79,
+        "key": "द",
+        "shift": false
+    },
+    {
+        "keycode": 80,
+        "key": "ज",
+        "shift": false
+    },
+    {
+        "keycode": 219,
+        "key": "ड",
+        "shift": false
+    },
+    {
+        "keycode": 221,
+        "key": "़",
+        "shift": false
+    },
+    {
+        "keycode": 220,
+        "key": "ॉ",
+        "shift": false
+    },
+    {
+        "keycode": 65,
+        "key": "ो",
+        "shift": false
+    },
+    {
+        "keycode": 83,
+        "key": "े",
+        "shift": false
+    },
+    {
+        "keycode": 68,
+        "key": "्",
+        "shift": false
+    },
+    {
+        "keycode": 70,
+        "key": "ि",
+        "shift": false
+    },
+    {
+        "keycode": 71,
+        "key": "ु",
+        "shift": false
+    },
+    {
+        "keycode": 72,
+        "key": "प",
+        "shift": false
+    },
+    {
+        "keycode": 74,
+        "key": "र",
+        "shift": false
+    },
+    {
+        "keycode": 75,
+        "key": "क",
+        "shift": false
+    },
+    {
+        "keycode": 76,
+        "key": "त",
+        "shift": false
+    },
+    {
+        "keycode": 186,
+        "key": "च",
+        "shift": false
+    },
+    {
+        "keycode": 222,
+        "key": "ट",
+        "shift": false
+    },
+    {
+        "keycode": 90,
+        "key": "ॆ",
+        "shift": false
+    },
+    {
+        "keycode": 88,
+        "key": "ं",
+        "shift": false
+    },
+    {
+        "keycode": 67,
+        "key": "म",
+        "shift": false
+    },
+    {
+        "keycode": 86,
+        "key": "न",
+        "shift": false
+    },
+    {
+        "keycode": 66,
+        "key": "व",
+        "shift": false
+    },
+    {
+        "keycode": 78,
+        "key": "ल",
+        "shift": false
+    },
+    {
+        "keycode": 77,
+        "key": "स",
+        "shift": false
+    },
+    {
+        "keycode": 188,
+        "key": ",",
+        "shift": false
+    },
+    {
+        "keycode": 190,
+        "key": ".",
+        "shift": false
+    },
+    {
+        "keycode": 191,
+        "key": "य",
+        "shift": false
+    },
+    {
+        "keycode": 191,
+        "key": "य",
+        "shift": false
+    },
+    {
+        "keycode": 192,
+        "key": "ऒ",
+        "shift": true
+    },
+    {
+        "keycode": 49,
+        "key": "ऍ",
+        "shift": true
+    },
+    {
+        "keycode": 50,
+        "key": "ॅ",
+        "shift": true
+    },
+    {
+        "keycode": 51,
+        "key": "्र",
+        "shift": true
+    },
+    {
+        "keycode": 52,
+        "key": "र्",
+        "shift": true
+    },
+    {
+        "keycode": 53,
+        "key": "ज्ञ",
+        "shift": true
+    },
+    {
+        "keycode": 54,
+        "key": "त्र",
+        "shift": true
+    },
+    {
+        "keycode": 55,
+        "key": "क्ष",
+        "shift": true
+    },
+    {
+        "keycode": 56,
+        "key": "श्र",
+        "shift": true
+    },
+    {
+        "keycode": 57,
+        "key": "(",
+        "shift": true
+    },
+    {
+        "keycode": 48,
+        "key": ")",
+        "shift": true
+    },
+    {
+        "keycode": 189,
+        "key": "ः",
+        "shift": true
+    },
+    {
+        "keycode": 187,
+        "key": "ऋ",
+        "shift": true
+    },
+    {
+        "keycode": 81,
+        "key": "औ",
+        "shift": true
+    },
+    {
+        "keycode": 87,
+        "key": "ऐ",
+        "shift": true
+    },
+    {
+        "keycode": 69,
+        "key": "आ",
+        "shift": true
+    },
+    {
+        "keycode": 82,
+        "key": "ई",
+        "shift": true
+    },
+    {
+        "keycode": 84,
+        "key": "ऊ",
+        "shift": true
+    },
+    {
+        "keycode": 89,
+        "key": "भ",
+        "shift": true
+    },
+    {
+        "keycode": 85,
+        "key": "ङ",
+        "shift": true
+    },
+    {
+        "keycode": 73,
+        "key": "घ",
+        "shift": true
+    },
+    {
+        "keycode": 79,
+        "key": "ध",
+        "shift": true
+    },
+    {
+        "keycode": 80,
+        "key": "झ",
+        "shift": true
+    },
+    {
+        "keycode": 219,
+        "key": "ढ",
+        "shift": true
+    },
+    {
+        "keycode": 221,
+        "key": "ञ",
+        "shift": true
+    },
+    {
+        "keycode": 220,
+        "key": "ऑ",
+        "shift": true
+    },
+    {
+        "keycode": 65,
+        "key": "ओ",
+        "shift": true
+    },
+    {
+        "keycode": 83,
+        "key": "ए",
+        "shift": true
+    },
+    {
+        "keycode": 68,
+        "key": "अ",
+        "shift": true
+    },
+    {
+        "keycode": 70,
+        "key": "इ",
+        "shift": true
+    },
+    {
+        "keycode": 71,
+        "key": "उ",
+        "shift": true
+    },
+    {
+        "keycode": 72,
+        "key": "फ",
+        "shift": true
+    },
+    {
+        "keycode": 74,
+        "key": "ऱ",
+        "shift": true
+    },
+    {
+        "keycode": 75,
+        "key": "ख",
+        "shift": true
+    },
+    {
+        "keycode": 76,
+        "key": "थ",
+        "shift": true
+    },
+    {
+        "keycode": 186,
+        "key": "छ",
+        "shift": true
+    },
+    {
+        "keycode": 222,
+        "key": "ठ",
+        "shift": true
+    },
+    {
+        "keycode": 90,
+        "key": "ऎ",
+        "shift": true
+    },
+    {
+        "keycode": 88,
+        "key": "ँ",
+        "shift": true
+    },
+    {
+        "keycode": 67,
+        "key": "ण",
+        "shift": true
+    },
+    {
+        "keycode": 86,
+        "key": "ऩ",
+        "shift": true
+    },
+    {
+        "keycode": 66,
+        "key": "ऴ",
+        "shift": true
+    },
+    {
+        "keycode": 78,
+        "key": "ळ",
+        "shift": true
+    },
+    {
+        "keycode": 77,
+        "key": "श",
+        "shift": true
+    },
+    {
+        "keycode": 188,
+        "key": "ष",
+        "shift": true
+    },
+    {
+        "keycode": 190,
+        "key": "।",
+        "shift": true
+    },
+    {
+        "keycode": 191,
+        "key": "य़",
+        "shift": true
+    },
+    {
+        "keycode": 16,
+        "key": "Shift",
+        "shift": false
+    }
+];
+
+
+function typing(e) {
 
     // if (disablebackspace && e.keyCode == 8) {
     //     e.preventDefault();
@@ -350,7 +858,7 @@ $('#textcopy').keyup(function (e) {
 
     // }
     // ps = usertext.length;
-});
+}
 
 
 function startTimer(duration) {

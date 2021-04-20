@@ -2,23 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>Hindi(KrutiDev) Typing Test</title>
 
+    <title>Hindi(Mangal) Typing Test</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .result input {
+            min-width: 150px;
+        }
+
+        @font-face {
+            font-family: hindi;
+            src: url(MANGAL.TTF);
+        }
+    </style>
 </head>
-<style>
-    html {
-        scroll-behavior: smooth;
-    }
 
-    @font-face {
-        font-family: hindi;
-        src: url(Kruti_Dev_010.ttf);
-    }
-</style>
 
 <body>
 
@@ -26,26 +31,26 @@
 
 
     <div class="container option">
-        <div class="card mt-5 col-6 m-auto shadow">
+        <div class="card mt-5 col-lg-6  col-md-12 m-auto shadow">
             <div class="card-header bg-danger text-light text-center">
-                Hindi Typing Test (Kruti-Dev)
+                Hindi Typing Test (Mangal)
             </div>
             <div class="card-body">
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Enter Your Name</label>
                     </div>
-                    <div class="col-8 p-1">
+                    <div class="col-lg-8 col-sm-12 p-1">
                         <input type="text" id="username" class="form-control">
                     </div>
                 </div>
 
 
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Select Test Time</label>
                     </div>
-                    <div class="col-8 p-1">
+                    <div class="col-lg-8 col-sm-12 p-1">
                         <select class="form-select" id="duration">
                             <option value="60">1 Minute</option>
                             <option value="120">2 Minute</option>
@@ -58,17 +63,17 @@
 
 
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Select Paragraph</label>
                     </div>
-                    <div class="col-8 p-1">
+                    <div class="col-lg-8 col-sm-12 p-1">
                         <select class="form-select" id="para">
                             <option value="1">Random Words</option>
-                            <option value="2" style="font-family:hindi">आधार</option>
+                            <option value="2" style="font-family:mangal">आधार</option>
 
-                            <option value="3" style="font-family:hindi">अलग्योझा</option>
-                            <option value="4" style="font-family:hindi">अमृत</option>
-                            <option value="5" style="font-family:hindi">अपनी करनी</option>
+                            <option value="3" style="font-family:mangal">अलग्योझा</option>
+                            <option value="4" style="font-family:mangal">अमृत</option>
+                            <option value="5" style="font-family:mangal">अपनी करनी</option>
 
 
                         </select>
@@ -78,10 +83,10 @@
 
 
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Set Word Limit</label>
                     </div>
-                    <div class="col-8 p-1 d-flex">
+                    <div class="col-lg-8 col-sm-12 p-1 d-flex">
                         <div class="p-2">
                             <input class="form-check-input" type="checkbox" value="" id="limiton">
                             <label class="form-check-label">
@@ -102,10 +107,10 @@
                     </div>
                 </div>
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Backspace</label>
                     </div>
-                    <div class="col-8 p-1 d-flex">
+                    <div class="col-lg-8 col-sm-12 p-1 d-flex">
                         <div class="p-2">
                             <input class="form-check-input" type="checkbox" value="" id="backon" checked>
                             <label class="form-check-label">
@@ -126,10 +131,10 @@
                     </div>
                 </div>
                 <div class="row g-3 align-items-center">
-                    <div class="col-4 p-1">
+                    <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Highlight & Auto Scroll</label>
                     </div>
-                    <div class="col-8 p-1 d-flex">
+                    <div class="col-lg-8 col-sm-12 p-1 d-flex">
                         <div class="p-2">
                             <input class="form-check-input" type="checkbox" id="scrollon" value="" checked>
                             <label class="form-check-label">
@@ -156,7 +161,7 @@
         </div>
     </div>
     <div class="container tester" style="display:none">
-        <div class="card mt-1 col-9 m-auto shadow">
+        <div class="card mt-1 col-lg-9 col-sm-12 m-auto shadow">
             <div class="card-header bg-danger text-light text-center d-flex justify-content-evenly">
                 <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
                 <button class="btn btn-danger">NWPM <span class="nwpm">0.00</span></button>
@@ -164,21 +169,21 @@
                 <button class="btn btn-danger">TIME <span class="time">00:00</span></button>
             </div>
             <div class="card-body">
-                <div class="border p-2 overflow-auto bg-light" id="textbook" style="height:250px;font-size:20px;font-family:hindi"></div>
-                <div class="bg-danger">
-                    <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
+                <div class="border p-2 overflow-auto bg-light" id="textbook" style="height:250px;font-size:20px;font-family:mangal"></div>
+                <div class="bg-danger p-2">
+                    <!-- <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
                     <button class="btn btn-danger">NWPM <span class="nwpm">0.00</span></button>
                     <button class="btn btn-danger">ACCU <span class="acc">0</span>%</button>
-                    <button class="btn btn-danger">TIME <span class="time">00:00</span></button>
+                    <button class="btn btn-danger">TIME <span class="time">00:00</span></button> -->
 
                     <button class="btn btn-sm btn-primary isize">+</button>
-                    <span id="fsize">20</span>
+                    <span id="fsize" class="text-white">20</span>
                     <button class="btn btn-sm btn-primary dsize">-</button>
 
                 </div>
 
                 <div class="card border" style="height:250px">
-                    <textarea style="height:100%;resize: none;border:none;outline:none;font-family:hindi" id="textcopy" class="p-2"></textarea>
+                    <textarea style="height:100%;resize: none;border:none;outline:none;font-family:mangal" id="textcopy" class="p-2"></textarea>
 
                 </div>
                 <div class="mt-2">
@@ -190,11 +195,11 @@
         </div>
     </div>
     <div class="container result" style="display:none">
-        <div class="card mt-3 col-9 m-auto shadow">
+        <div class="card mt-3 col-lg-9 col-sm-12 m-auto shadow">
             <div class="card-header text-dark text-center" style="font-size:xx-large;">
                 <b>TYPING TEST RESULT</b>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class='table'>
                     <tr class="" style="font-size: large;">
                         <td><span class="p-2">Name </span></td>
