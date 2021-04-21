@@ -17,6 +17,22 @@
     .result input {
         min-width: 150px;
     }
+
+    .bg-custom {
+        background-color: #3f3c98;
+    }
+
+    .btn-custom {
+        background-color: #3f3c98;
+        color: white;
+
+    }
+
+    .btn-outline-custom {
+        /* background-color: #3f3c98; */
+        color: #3f3c98;
+        border: 1px solid #3f3c98;
+    }
 </style>
 
 <body>
@@ -26,11 +42,11 @@
 
     <div class="container option">
         <div class="card mt-5 col-lg-6 col-md-12 m-auto shadow">
-            <div class="card-header bg-danger text-light text-center">
+            <div class="card-header bg-custom text-light text-center">
                 English Typing Test
             </div>
-            <div class="card-body">
-                <div class="row g-3 align-items-center">
+            <div class="card-body m-1">
+                <div class="row align-items-center">
                     <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Enter Your Name</label>
                     </div>
@@ -40,7 +56,7 @@
                 </div>
 
 
-                <div class="row g-3 align-items-center">
+                <div class="row  align-items-center">
                     <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Select Test Time</label>
                     </div>
@@ -56,7 +72,7 @@
                 </div>
 
 
-                <div class="row g-3 align-items-center">
+                <div class="row  align-items-center">
                     <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Select Paragraph</label>
                     </div>
@@ -76,18 +92,22 @@
                 </div>
 
 
-                <div class="row g-3 align-items-center">
+                <div class="row  align-items-center">
                     <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Set Word Limit</label>
                     </div>
-                    <div class="col-lg-8 col-sm-12 p-1 d-flex">
-                        <div class="p-2">
+                    <div class="col-lg-8 col-sm-12 p-1 d-flex align-items-center">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input m-auto" type="checkbox" style="font-size:30px" id="newlimitcheck">
+                        </div>
+
+                        <div class="p-2 d-none">
                             <input class="form-check-input" type="checkbox" value="" id="limiton">
                             <label class="form-check-label">
                                 Enabled
                             </label>
                         </div>
-                        <div class="p-2">
+                        <div class="p-2 d-none">
                             <input class="form-check-input" type="checkbox" value="" id="limitoff" checked>
                             <label class="form-check-label">
                                 Disabled
@@ -95,23 +115,26 @@
                             </label>
                         </div>
 
-                        <input type="number" id="limit" class="form-control" value="50" style="width:30%" disabled>
+                        <input type="number" id="limit" class="form-control ms-2" value="50" style="width:30%" disabled>
 
 
                     </div>
                 </div>
-                <div class="row g-3 align-items-center">
+                <div class="row  align-items-center">
                     <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Backspace</label>
                     </div>
                     <div class="col-lg-8 col-sm-12 p-1 d-flex">
-                        <div class="p-2">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input m-auto" type="checkbox" style="font-size:30px" id="newbackcheck" checked>
+                        </div>
+                        <div class="p-2 d-none">
                             <input class="form-check-input" type="checkbox" value="" id="backon" checked>
                             <label class="form-check-label">
                                 Enabled
                             </label>
                         </div>
-                        <div class="p-2">
+                        <div class="p-2 d-none">
                             <input class="form-check-input" type="checkbox" value="" id="backoff">
                             <label class="form-check-label">
                                 Disabled
@@ -124,18 +147,21 @@
 
                     </div>
                 </div>
-                <div class="row g-3 align-items-center">
+                <div class="row  align-items-center">
                     <div class="col-lg-4 col-sm-12 p-1">
                         <label for="" class="col-form-label">Highlight & Auto Scroll</label>
                     </div>
                     <div class="col-lg-8 col-sm-12 p-1 d-flex">
-                        <div class="p-2">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input m-auto" type="checkbox" style="font-size:30px" id="newscrollcheck" checked>
+                        </div>
+                        <div class="p-2 d-none">
                             <input class="form-check-input" type="checkbox" id="scrollon" value="" checked>
                             <label class="form-check-label">
                                 Enabled
                             </label>
                         </div>
-                        <div class="p-2">
+                        <div class="p-2 d-none">
                             <input class="form-check-input" type="checkbox" value="" id="scrolloff">
                             <label class="form-check-label">
                                 Disabled
@@ -148,31 +174,29 @@
 
                     </div>
                 </div>
-                <div class="row g-3 align-items-center">
-                    <button class="btn btn-outline-danger" id="start">Start Typing Test</button>
+                <div class="row  align-items-center">
+                    <button class="btn btn-outline-custom" id="start">Start Typing Test</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="container tester" style="display:none">
         <div class="card mt-1 col-lg-9 col-sm-12 m-auto shadow">
-            <div class="card-header bg-danger text-light text-center d-flex justify-content-evenly">
-                <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
-                <button class="btn btn-danger">NWPM <span class="nwpm">0.00</span></button>
-                <button class="btn btn-danger">ACCU <span class="acc">0</span>%</button>
-                <button class="btn btn-danger">TIME <span class="time">00:00</span></button>
+            <div class="card-header bg-custom text-light text-center d-flex justify-content-evenly">
+                <button class="btn btn-custom">GWPM <span class="gwpm">0.00</span></button>
+                <button class="btn btn-custom">NWPM <span class="nwpm">0.00</span></button>
+                <button class="btn btn-custom">ACCU <span class="acc">0</span>%</button>
+                <button class="btn btn-custom">TIME <span class="time">00:00</span></button>
             </div>
             <div class="card-body">
                 <div class="border p-2 overflow-auto bg-light" id="textbook" style="height:250px;font-size:20px;"></div>
-                <div class="bg-danger p-2">
-                    <!-- <button class="btn btn-danger">GWPM <span class="gwpm">0.00</span></button>
-                    <button class="btn btn-danger">NWPM <span class="nwpm">0.00</span></button>
-                    <button class="btn btn-danger">ACCU <span class="acc">0</span>%</button>
-                    <button class="btn btn-danger">TIME <span class="time">00:00</span></button> -->
+                <div class="bg-custom p-2">
+                    <!-- <button class="btn btn-custom">GWPM <span class="gwpm">0.00</span></button>
+                    <button class="btn btn-custom">NWPM <span class="nwpm">0.00</span></button>
+                    <button class="btn btn-custom">ACCU <span class="acc">0</span>%</button>
+                    <button class="btn btn-custom">TIME <span class="time">00:00</span></button> -->
 
-                    <button class="btn btn-sm btn-primary isize">+</button>
-                    <span id="fsize" class="text-white">20</span>
-                    <button class="btn btn-sm btn-primary dsize">-</button>
+
 
                 </div>
 
@@ -180,10 +204,17 @@
                     <textarea style="height:100%;resize: none;border:none;outline:none;" id="textcopy" class="p-2"></textarea>
 
                 </div>
-                <div class="mt-2">
-                    <button class="btn btn-danger" id="subtest">Submit</button>
-                    <button class="btn btn-danger" onclick="restarttest()">Restart</button>
+                <div class="mt-2 d-flex justify-content-between">
+                    <div>
+                        <button class="btn btn-custom" id="subtest">Submit</button>
+                        <button class="btn btn-custom" onclick="restarttest()">Restart</button>
+                    </div>
 
+                    <div>
+                        <button class="btn btn-sm btn-custom isize">+</button>
+                        <span id="fsize" class="">20</span>
+                        <button class="btn btn-sm btn-custom dsize">-</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,7 +286,7 @@
                         <td><input type="text" class="form-control" id="backspacecount" disabled></td>
                     </tr>
                 </table>
-                <button class="btn btn-danger" onclick="restarttest()">Retake Test</button>
+                <button class="btn btn-custom" onclick="restarttest()">Retake Test</button>
             </div>
         </div>
     </div>

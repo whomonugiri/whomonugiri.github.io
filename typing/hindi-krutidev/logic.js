@@ -164,7 +164,18 @@ $('#backoff').click(function () {
 
     }
 });
-
+$('#newscrollcheck').click(function () {
+    $('#scrollon').trigger('click');
+    // alert("sds");
+});
+$('#newlimitcheck').click(function () {
+    $('#limiton').trigger('click');
+    // alert("sds");
+});
+$('#newbackcheck').click(function () {
+    $('#backon').trigger('click');
+    // alert("sds");
+});
 
 $('#scrollon').click(function () {
     if ($(this).is(":checked")) {

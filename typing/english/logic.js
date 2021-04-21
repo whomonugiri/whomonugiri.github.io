@@ -103,6 +103,10 @@ $('.dsize').click(function () {
     $('#textbook').css('font-size', fsize + 'px');
 });
 
+$('#newlimitcheck').click(function () {
+    $('#limiton').trigger('click');
+    // alert("sds");
+});
 
 $('#limiton').click(function () {
     if ($(this).is(":checked")) {
@@ -136,7 +140,10 @@ $('#limitoff').click(function () {
 
     }
 });
-
+$('#newbackcheck').click(function () {
+    $('#backon').trigger('click');
+    // alert("sds");
+});
 $('#backon').click(function () {
     if ($(this).is(":checked")) {
         $('#backoff').prop('checked', false);
@@ -164,7 +171,10 @@ $('#backoff').click(function () {
 
     }
 });
-
+$('#newscrollcheck').click(function () {
+    $('#scrollon').trigger('click');
+    // alert("sds");
+});
 
 $('#scrollon').click(function () {
     if ($(this).is(":checked")) {
